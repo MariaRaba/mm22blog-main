@@ -56,5 +56,10 @@
                 </div>
             </div>
         @endforeach
+        
+    <div class="my-32">
+        <button class="bg-blue-500 px-6 py-3 rounded font-medium text-white">Click me</button>
     </div>
+
+</div>
 @endsection
