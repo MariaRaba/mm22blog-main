@@ -44,11 +44,13 @@
                                 <button class="btn btn-primary">Like</button>
                             @endif
                         </form>
+                        
                         <div class="flex flex-wrap gap-1">
                             @foreach ($post->tags as $tag)
-                                <div class="badge badge-primary badge-outline">{{$tag->name}}</div>
+                                <a href="{{ route('tag', ['tag' => $tag]) }}"><div class="badge badge-primary badge-outline">{{ $tag->name }}</div></a>
                             @endforeach
                         </div>
+
                         <div class="card-actions justify-end">
                             <a href="{{route('post', ['post'=>$post])}}" class="btn btn-primary">Read More</a>
                         </div>
@@ -56,6 +58,12 @@
                 </div>
             </div>
         @endforeach
+        
+@foreach ($post->tags as $tag)
+<a href="{{ route('tag', ['tag' => $tag]) }}">
+<div class="badge badge-primary badge-outline">{{ $tag->name }}</div>
+</a>
+@endforeach
         
     <div class="my-32">
         <button class="bg-blue-500 px-6 py-3 rounded font-medium text-white">Click me</button>
